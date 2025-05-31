@@ -2,11 +2,16 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   // devtools: { enabled: true },
+  ssr: false, // Pastikan SSR dinonaktifkan
   app: {
-    baseURL: '/blog/'  // wajib sesuai nama repo
+    baseURL: '/blog/', // Ganti '/blog/' dengan nama repo Anda
+    buildAssetsDir: '/_nuxt/' // Pastikan ini sesuai
   },
-  ssr: false,
-
+  nitro: {
+    prerender: {
+      crawlLinks: true
+    }
+  },
   modules: [
     '@nuxt/content',
     '@nuxt/fonts',
