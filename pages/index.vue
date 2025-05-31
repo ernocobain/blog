@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import type { BreadcrumbItem } from '@nuxt/ui'
 
 const postsPerPage = 6
 const currentPage = ref(1)
