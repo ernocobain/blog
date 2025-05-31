@@ -5,7 +5,6 @@ export default defineNuxtConfig({
   ssr: false, // Pastikan SSR dinonaktifkan
   app: {
     baseURL: '/blog/', // Ganti '/blog/' dengan nama repo Anda
-    buildAssetsDir: '/_nuxt/' // Pastikan ini sesuai
   },
   nitro: {
     prerender: {

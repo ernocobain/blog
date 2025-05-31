@@ -5,7 +5,7 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "generate": "nuxt generate",
+    "generate": "nuxi generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
@@ -23,4 +23,5 @@
   "devDependencies": {
     "nuxt-disqus": "^1.1.1"
   }
+  
 }
