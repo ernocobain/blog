@@ -8,7 +8,7 @@ export default defineNuxtConfig({
     },
     preset: 'cloudflare_pages'
   },
-
+ssr:false,
   modules: [
     '@nuxt/content',
     '@nuxt/fonts',
