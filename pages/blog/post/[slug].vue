@@ -83,7 +83,6 @@ if (post.value) {
     <template v-else-if="post">
       <UBreadcrumb :items="[
         { label: 'Home', to: '/' },
-        { label: 'Blog', to: '/blog' },
         { label: post.title }
       ]" class="mb-6" />
 
