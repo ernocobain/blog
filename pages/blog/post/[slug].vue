@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { ContentImageRenderer } from '#components';
+
 const route = useRoute();
 const slug = route.params.slug;
 
@@ -105,7 +107,9 @@ if (post.value) {
             <p class="text-sm text-gray-500 dark:text-gray-400">
               {{ new Date(post.date).toLocaleDateString() }}
             </p>
-            <ContentRenderer :value="post.body" class="prose dark:prose-invert" />
+            <ContentRenderer :value="post.body" class="prose dark:prose-invert" :components="{
+              img:ContentImageRenderer
+            }"/>
           </div>
 
           <!-- Reading Time -->
