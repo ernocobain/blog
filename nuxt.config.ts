@@ -6,7 +6,13 @@ export default defineNuxtConfig({
     prerender: {
       autoSubfolderIndex: false,
     },
-    preset: 'cloudflare_pages'
+    preset: 'cloudflare_pages',
+    routeRules: {
+      '/__preview.json': {
+        cors: true,
+        headers: { 'Access-Control-Allow-Origin': '*' }
+      }
+    }
   },
   modules: [
     '@nuxt/content',
@@ -21,12 +27,13 @@ export default defineNuxtConfig({
     preview: {
       api: 'https://api.nuxt.studio',
       gitInfo: {
-          name: 'blog',
-          owner: 'ernocobain/blog',
-          url: 'https://github.com/ernocobain/blog.git'
-        }
+        name: 'blog',
+        owner: 'ernocobain/blog',
+        url: 'https://github.com/ernocobain/blog.git'
+      }
     },
   },
+
 
   css: [
     '~/assets/css/main.css',
@@ -41,6 +48,6 @@ export default defineNuxtConfig({
     }
   },
 
- 
+
 
 })
