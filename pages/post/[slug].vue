@@ -121,7 +121,7 @@ if (post.value) {
 
           <template v-if="post && post._id && route.fullPath">
             <client-only>
-              <BlogDisqusCard :url="`https://maunguli.com/${route.fullPath}`" :identifier="post._id"
+              <BlogDisqusCard :url="`https://blog.maunguli.com/${route.fullPath}`" :identifier="post._id"
                 shortname="maunguli" />
             </client-only>
           </template>
@@ -134,28 +134,3 @@ if (post.value) {
     </template>
   </UContainer>
 </template>
-
-<style scoped>
-.prose {
-  max-width: 100%;
-  font-size: 1rem;
-  line-height: 1.7;
-}
-
-.dark .prose {
-  color: #e0e0e0;
-}
-
-.prose a {
-  color: #1e90ff;
-  text-decoration: underline;
-}
-
-.text-primary {
-  color: #1e90ff;
-}
-
-.hover\:underline:hover {
-  text-decoration: underline;
-}
-</style>
