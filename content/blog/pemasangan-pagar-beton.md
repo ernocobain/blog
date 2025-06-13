@@ -1,13 +1,16 @@
 ---
-title: Pemasangan pagar beton 
+title: Pemasangan pagar beton
 description: Pemasangan pagar beton dan kanstin untuk pembatas taman.
 date: 2025-04-10
 path: /blog/post/pemasangan-pagar-beton
-image:
+image: ""
 cover: https://picsum.photos/id/1/200/300
-tags: 
-     - pemasangan pagar
-     - pembatasan taman
+tags:
+  - pemasangan pagar
+  - pembatasan taman
+seo:
+  title: Pemasangan pagar beton
+  description: Pemasangan pagar beton dan kanstin untuk pembatas taman.
 ---
 
 # Pasang Pagar Batas Beton dan Kanstin Taman
@@ -15,7 +18,6 @@ tags:
 ## Pemasangan Pagar Beton dan Kanstin untuk Pembatas Taman
 
 Pagar beton dan kanstin merupakan solusi praktis untuk menciptakan pembatas taman yang kokoh, tahan lama, serta estetis. Kombinasi ini membantu menjaga area taman tetap rapi dan tertata dengan baik.
-
 
 ## Keunggulan Pagar Beton dan Kanstin
 
@@ -30,7 +32,6 @@ Pemasangan pagar beton dilakukan dengan mempersiapkan area fondasi terlebih dahu
 1. Lakukan pengukuran area yang akan dipasang pagar.
 2. Siapkan fondasi dengan menggali tanah sesuai ukuran pagar yang akan dipasang.
 3. Tempatkan pagar beton pada posisi yang telah ditentukan, lalu pastikan pagar berdiri dengan kokoh.
-
 
 ## Proses Pemasangan Kanstin
 
