@@ -5,9 +5,9 @@ const route = useRoute();
 const slug = route.params.slug;
 
 // Fetch post and all posts in parallel
-const { data: post, status: postStatus } = await useAsyncData(`post-${slug}`, () =>
+const { data: post, status: postStatus } = await useAsyncData(`${slug}`, () =>
   queryCollection('blog')
-    .where('path', '=', `/blog/post/${slug}`)
+    .where('path', '=', `/post/${slug}`)
     .first()
 );
 

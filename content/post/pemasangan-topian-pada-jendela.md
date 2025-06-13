@@ -2,6 +2,7 @@
 tags: []
 title: Pemasangan topian pada jendela tampk depan
 description: Pekerja sedang mengerjakan topian di atas jendela  bagian depan bangunan
+path: /post/pemasangan-topian-pada-jedela
 seo:
   title: Pemasangan topian pada jendela tampk depan
   description: Pekerja sedang mengerjakan topian di atas jendela  bagian depan bangunan

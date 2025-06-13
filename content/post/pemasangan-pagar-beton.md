@@ -2,7 +2,7 @@
 title: Pemasangan pagar beton
 description: Pemasangan pagar beton dan kanstin untuk pembatas taman.
 date: 2025-04-10
-path: /blog/post/pemasangan-pagar-beton
+path: /post/pemasangan-pagar-beton
 image: ""
 cover: https://picsum.photos/id/1/200/300
 tags:
