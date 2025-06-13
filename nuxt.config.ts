@@ -28,7 +28,7 @@ export default defineNuxtConfig({
       api: 'https://api.nuxt.studio',
       gitInfo: {
         name: 'blog',
-        owner: 'ernocobain/blog',
+        owner: 'ernocobain',
         url: 'https://github.com/ernocobain/blog.git'
       }
     },
