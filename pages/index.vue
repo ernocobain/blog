@@ -57,7 +57,9 @@ const popularPosts = computed(() => {
   <UContainer class="py-8">
     <h1 class="text-3xl font-bold mb-6">Blog</h1>
     <BlogSearch />
-    <BlogHeroBanner />
+    <ClientOnly>
+      <BlogHeroBanner />
+    </ClientOnly>
 
     <!-- Grid Layout: 2 kolom -->
     <div class="flex flex-col lg:flex-row gap-8 mt-10">
@@ -75,19 +77,16 @@ const popularPosts = computed(() => {
         </div>
 
         <!-- Tags dan Pagination bisa tetap di bawah konten utama -->
-        <div class="flex gap-2 my-6 flex-wrap">
-          <h4>Tags</h4>
-          <ClientOnly>
-            <div class="flex gap-2 my-6 flex-wrap">
-              <h4>Tags</h4>
-              <UButton v-for="tag in allTags" :key="tag" :variant="selectedTag === tag ? 'solid' : 'soft'"
-                color="primary" size="sm" @click="selectedTag = tag">
-                {{ tag }}
-              </UButton>
-            </div>
-          </ClientOnly>
+        <ClientOnly>
+          <div class="flex gap-2 my-6 flex-wrap">
+            <h4>Tags</h4>
+            <UButton v-for="tag in allTags" :key="tag" :variant="selectedTag === tag ? 'solid' : 'soft'" color="primary"
+              size="sm" @click="selectedTag = tag">
+              {{ tag }}
+            </UButton>
+          </div>
+        </ClientOnly>
 
-        </div>
 
         <div class="flex justify-center items-center gap-4 mt-10">
           <UButton icon="i-heroicons-chevron-left" color="neutral" variant="ghost" :disabled="currentPage <= 1"
