@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { NuxtImg } from '#components';
+
 defineProps<{
   title: string
   date: string
@@ -16,14 +18,19 @@ defineProps<{
     <!-- Responsive Image -->
     <picture>
       <source :srcset="cover.desktop" media="(min-width: 768px)" />
-      <NuxtImg :src="cover.mobile" alt="Blog cover" class="w-full h-48 object-cover rounded-xl" />
+      <NuxtImg v-if="cover.mobile" :src="cover.mobile" alt="Blog cover" class="w-full h-48 object-cover rounded-xl" />
     </picture>
 
     <div class="flex flex-col gap-2">
       <h2 class="text-xl font-semibold leading-tight line-clamp-2">
         {{ title }}
       </h2>
-      <p class="text-gray-500 text-sm">{{ new Date(date).toLocaleDateString() }}</p>
+      <ClientOnly>
+        <p class="text-gray-500 text-sm">
+          {{ new Date(date).toLocaleDateString() }}
+        </p>
+      </ClientOnly>
+
       <p v-if="excerpt" class="text-gray-700 text-sm line-clamp-3">
         {{ excerpt }}
       </p>
