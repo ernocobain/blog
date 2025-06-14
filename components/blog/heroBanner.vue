@@ -1,6 +1,6 @@
 <!-- components/BlogHeroBanner.vue -->
 <template>
-    <div class="relative w-full bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-8 md:p-12 mb-12 shadow-md">
+    <div class="relative w-full h-[320pxpx] lg:h-[250px] bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-8 md:p-12 mb-12 shadow-md">
         <div class="max-w-3xl">
             <h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
                 Temukan Cerita dan Tips Ngoding Terbaru!

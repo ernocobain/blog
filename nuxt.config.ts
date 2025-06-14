@@ -49,6 +49,24 @@ export default defineNuxtConfig({
     }
   },
 
+  vite: {
+  build: {
+    minify: 'terser',
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            return 'vendor'; // Memisahkan vendor dari kode utama
+          }
+        }
+      }
+    }
+  }
+},
+
+  build:{
+    analyze: true
+  }
 
 
 })
