@@ -1,6 +1,7 @@
 ---
 tags: []
 title: Pemasangan topian pada jendela tampk depan
+date: 2025-04-13
 description: Pekerja sedang mengerjakan topian di atas jendela  bagian depan bangunan
 seo:
   title: Pemasangan topian pada jendela tampk depan

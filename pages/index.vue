@@ -57,35 +57,39 @@ const popularPosts = computed(() => {
   <UContainer class="py-8">
     <h1 class="text-3xl font-bold mb-6">Blog</h1>
     <BlogSearch />
-    <ClientOnly>
-      <BlogHeroBanner />
-    </ClientOnly>
+    <BlogHeroBanner />
 
     <!-- Grid Layout: 2 kolom -->
     <div class="flex flex-col lg:flex-row gap-8 mt-10">
       <!-- Konten Utama -->
       <div class="flex-1">
-        <div class="grid md:grid-cols-2 gap-6">
-          <NuxtLink v-for="post in paginatedPosts" :key="post.path" :to="post.path">
-            <UCard class="hover:ring-2 hover:ring-primary transition cursor-pointer">
-              <BlogPostCard :title="post.title" :path="post.path" :date="post.date" :cover="{
-                mobile: post.coverMobile ?? post.cover,
-                desktop: post.coverDesktop ?? post.cover
-              }" :excerpt="post.description ?? post.excerpt" />
-            </UCard>
-          </NuxtLink>
-        </div>
+        <Suspense>
+          <template #default>
+            <div class="grid md:grid-cols-2 gap-6">
+              <NuxtLink v-for="post in paginatedPosts" :key="post.path" :to="post.path">
+                <UCard class="hover:ring-2 hover:ring-primary transition cursor-pointer">
+                  <BlogPostCard :title="post.title" :path="post.path" :date="post.date ?? ''"  :cover="{
+                    mobile: post.coverMobile ?? post.cover,
+                    desktop: post.coverDesktop ?? post.cover
+                  }" :excerpt="post.description ?? post.excerpt" />
+                </UCard>
+              </NuxtLink>
+            </div>
+          </template>
+          <template #fallback>
+            <UProgress animation="swing" />
+          </template>
+        </Suspense>
 
         <!-- Tags dan Pagination bisa tetap di bawah konten utama -->
-        <ClientOnly>
-          <div class="flex gap-2 my-6 flex-wrap">
-            <h4>Tags</h4>
-            <UButton v-for="tag in allTags" :key="tag" :variant="selectedTag === tag ? 'solid' : 'soft'" color="primary"
-              size="sm" @click="selectedTag = tag">
-              {{ tag }}
-            </UButton>
-          </div>
-        </ClientOnly>
+        <div class="flex gap-2 my-6 flex-wrap">
+          <h4>Tags</h4>
+          <UButton v-for="tag in allTags" :key="tag" :variant="selectedTag === tag ? 'solid' : 'soft'" color="primary"
+            size="sm" @click="selectedTag = tag">
+            {{ tag }}
+          </UButton>
+        </div>
+
 
 
         <div class="flex justify-center items-center gap-4 mt-10">
@@ -103,7 +107,7 @@ const popularPosts = computed(() => {
 
       <!-- Sidebar -->
       <div class="w-full lg:w-auto">
-        <BlogSidebar :latest-posts="popularPosts" title="Postingan Popular" width="" />
+        <BlogSidebar v-if="popularPosts" :latest-posts="popularPosts" title="Postingan Popular" width="" />
       </div>
     </div>
 

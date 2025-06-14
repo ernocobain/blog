@@ -16,7 +16,7 @@ defineProps<{
     <!-- Responsive Image -->
     <picture>
       <source :srcset="cover.desktop" media="(min-width: 768px)" />
-      <img :src="cover.mobile" alt="Blog cover" class="w-full h-48 object-cover rounded-xl" />
+      <NuxtImg :src="cover.mobile" alt="Blog cover" class="w-full h-48 object-cover rounded-xl" />
     </picture>
 
     <div class="flex flex-col gap-2">
