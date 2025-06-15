@@ -68,7 +68,7 @@ const popularPosts = computed(() => {
             <div class="grid md:grid-cols-2 gap-6">
               <NuxtLink v-for="post in paginatedPosts" :key="post.path" :to="post.path">
                 <UCard class="hover:ring-2 hover:ring-primary transition cursor-pointer">
-                  <BlogPostCard :title="post.title" :path="post.path" :date="post.date ?? ''"  :cover="{
+                  <BlogPostCard  v-if="allPostsStatus === 'success'" :title="post.title" :path="post.path" :date="post.date ?? ''"  :cover="{
                     mobile: post.coverMobile ?? post.cover,
                     desktop: post.coverDesktop ?? post.cover
                   }" :excerpt="post.description ?? post.excerpt" />
