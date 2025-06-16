@@ -1,29 +1,23 @@
 <script setup lang="ts">
-import type { BlogCollectionItem } from '@nuxt/content'
-
-
-
+// Import tipe yang sudah kita definisikan berdasarkan skema koleksi
+import type { BlogCollectionItem } from '~/types/blog.d'; // Pastikan path-nya benar
 
 const props = defineProps<{
-  latestPosts: BlogCollectionItem[]
-  relatedPosts?: BlogCollectionItem[]
-  title: string
-  titleRelate?: string
-}>()
-
+  latestPosts: BlogCollectionItem[]; // <-- Gunakan tipe ini
+  relatedPosts?: BlogCollectionItem[]; // <-- Gunakan tipe ini
+  title: string;
+  titleRelate?: string;
+}>();
 </script>
 
 <template>
   <aside class="space-y-10">
-    <!-- Latest Posts -->
     <section>
       <h2 class="text-xl font-semibold mb-4">{{ title }}</h2>
       <ul class="space-y-5">
-        <li v-for="post in latestPosts" :key="post.path">
-          <BlogRealetedPostCard
+        <li v-for="post in latestPosts" :key="post._path"> <BlogRealetedPostCard
             :title="post.title"
-            :path="post.path"
-            :date="post.date"
+            :path="post.path ?? post._path" :date="post.date"
             :cover="post.cover"
             :excerpt="post.description ?? post.excerpt"
           />
@@ -31,13 +25,10 @@ const props = defineProps<{
       </ul>
     </section>
 
-    <!-- Related Posts -->
     <section v-if="relatedPosts?.length">
-      <h2 class="text-xl font-semibold mb-4">{{  titleRelate }}</h2>
+      <h2 class="text-xl font-semibold mb-4">{{ titleRelate }}</h2>
       <ul class="space-y-2">
-        <li v-for="related in relatedPosts" :key="related.path">
-          <NuxtLink :to="related.path" class="text-primary hover:underline">
-            {{ related.title }}
+        <li v-for="related in relatedPosts" :key="related._path"> <NuxtLink :to="related.path ?? related._path" class="text-primary hover:underline"> {{ related.title }}
           </NuxtLink>
         </li>
       </ul>
