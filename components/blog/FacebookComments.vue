@@ -1,3 +1,13 @@
+<template>
+  <div
+    class="fb-comments"
+    :data-href="fullPageUrl"
+    data-width="100%"
+    data-numposts="5"
+  >
+  </div>
+</template>
+
 <script setup lang="ts">
 // Komponen ini menerima path URL dari halaman saat ini
 const props = defineProps({
@@ -17,8 +27,6 @@ const fullPageUrl = computed(() => `https://blog.maunguli.com${props.path}`);
 const initializeFacebookSdk = () => {
   // Cek apakah SDK sudah dimuat sebelumnya
   if (document.getElementById('facebook-jssdk')) {
-    // Jika sudah ada, kita hanya perlu memerintahkan Facebook untuk
-    // memindai ulang halaman dan merender plugin yang mungkin baru ditambahkan.
     if (window.FB) {
       window.FB.XFBML.parse();
     }
@@ -35,11 +43,13 @@ const initializeFacebookSdk = () => {
   
   // Fungsi ini akan dipanggil setelah SDK selesai dimuat
   window.fbAsyncInit = function() {
-    window.FB.init({
-      appId: FACEBOOK_APP_ID,
-      xfbml: true,
-      version: 'v20.0'
-    });
+    if (window.FB) {
+      window.FB.init({
+        appId: FACEBOOK_APP_ID,
+        xfbml: true,
+        version: 'v20.0'
+      });
+    }
   };
 
   // Masukkan script ke dalam elemen <head>
