@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ContentImageRenderer } from '#components';
 import FacebookComents from '~/components/blog/FacebookComents.vue';
+import WhatsappButton from '~/components/blog/WhatsappButton.vue';
 
 const route = useRoute();
 const slug = route.params.slug;
@@ -77,60 +78,57 @@ if (post.value) {
 
 <template>
   <UContainer class="py-8">
-    <template v-if="postStatus === 'pending'">
-      <p>Loading post...</p>
-    </template>
-
-    <template v-else-if="postStatus === 'error'">
-      <p>Error loading post. Mohon coba lagi.</p>
-    </template>
-
-    <template v-else-if="!post">
-      <p>Post not found.</p>
+    <template v-if="postStatus !== 'success' || !post">
+      <p v-if="postStatus === 'pending'">Sedang memuat artikel...</p>
+      <p v-else>Artikel tidak ditemukan atau terjadi kesalahan.</p>
     </template>
 
     <template v-else>
-      <UBreadcrumb :items="[
-        { label: 'Home', to: '/' },
-        { label: post.title }
-      ]" class="mb-6" />
-
-      <div class="flex flex-col lg:flex-row gap-12">
-        <div class="lg:w-2/3">
-          <article class="space-y-6">
-            <h1 class="text-3xl font-bold tracking-tight">{{ post.title }}</h1>
-
-            <div class="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
-              <span>{{ new Date(post.date).toLocaleDateString() }}</span>
-              <span v-if="readingTime">· {{ readingTime }}</span>
-            </div>
-
-            <div v-if="post.tags?.length" class="flex gap-2 flex-wrap">
-              <UBadge v-for="tag in post.tags" :key="tag" color="primary" variant="soft">
-                {{ tag }}
-              </UBadge>
+      <div class="flex flex-col lg:flex-row gap-x-12 gap-y-8">
+        <main class="lg:w-2/3">
+          <article>
+            <div class="space-y-4 mb-6">
+              <UBreadcrumb :items="[
+                { label: 'Home', to: '/' },
+                { label: 'Blog', to: '/blog' },
+                { label: post.title, disabled: true }
+              ]" />
+              <h1 class="text-3xl lg:text-4xl font-bold tracking-tight">{{ post.title }}</h1>
+              <div class="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
+                <span>Diterbitkan pada {{ new Date(post.date).toLocaleDateString('id-ID', {
+                  day: 'numeric', month:
+                    'long', year: 'numeric' }) }}</span>
+                <span v-if="readingTime">· {{ readingTime }}</span>
+              </div>
+              <div v-if="post.tags?.length" class="flex gap-2 flex-wrap">
+                <UBadge v-for="tag in post.tags" :key="tag" color="primary" variant="soft">{{ tag }}</UBadge>
+              </div>
             </div>
 
             <ContentRenderer :value="post.body" class="prose dark:prose-invert max-w-none"
               :components="{ img: ContentImageRenderer }" />
           </article>
 
+          <div class="my-12 p-6 bg-gray-100 dark:bg-gray-800 rounded-lg text-center">
+            <h2 class="text-xl font-bold mb-2">Punya Pertanyaan atau Butuh Jasa Kami?</h2>
+            <p class="mb-4 text-gray-600 dark:text-gray-300">Jangan ragu, langsung diskusikan proyek Anda dengan kami.
+            </p>
+            <WhatsappButton phone-number="6285156436826"
+              :message="`Halo, saya tertarik dengan jasa bangunan setelah membaca artikel '${post.title}'.`" />
+          </div>
+
           <div class="mt-12">
+            <h3 class="text-2xl font-bold mb-4">Diskusi dan Tanya Jawab</h3>
             <ClientOnly>
-              <div class="mt-12">
-                <h3 class="text-2xl font-bold mb-4">Diskusi dan Tanya Jawab</h3>
-                <ClientOnly>
-                  <FacebookComents :url="route.path" />
-                </ClientOnly>
-              </div>
+              <FacebookComents :path="route.path" />
             </ClientOnly>
           </div>
-        </div>
+        </main>
 
-        <div class="lg:w-1/3">
+        <aside class="lg:w-1/3">
           <BlogSidebar :latest-posts="latestPosts" title="Postingan Terakhir" :related-posts="relatedPosts"
-            title-relate="Related Post" />
-        </div>
+            title-relate="Artikel Terkait" />
+        </aside>
       </div>
     </template>
   </UContainer>
