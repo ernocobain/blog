@@ -1,9 +1,5 @@
 <script setup lang="ts">
-import { ContentImageRenderer } from '#components';
-import FacebookComments from '~/components/blog/FacebookComments.vue';
-import FacebookComents from '~/components/blog/FacebookComments.vue';
-import WhatsappButton from '~/components/blog/WhatsappButton.vue';
-
+import { BlogSidebar, ContentImageRenderer, ContentRenderer, LazyBlogFacebookComments, LazyBlogWhatsappButton, UBreadcrumb } from '#components';
 const route = useRoute();
 const slug = route.params.slug;
 
@@ -101,7 +97,6 @@ if (post.value) {
             <div class="space-y-4 mb-6">
               <UBreadcrumb :items="[
                 { label: 'Home', to: '/' },
-                { label: 'Blog', to: '/blog' },
                 { label: post.title, disabled: true }
               ]" />
               <h1 class="text-3xl lg:text-4xl font-bold tracking-tight">{{ post.title }}</h1>
@@ -124,14 +119,14 @@ if (post.value) {
             <h2 class="text-xl font-bold mb-2">Punya Pertanyaan atau Butuh Jasa Kami?</h2>
             <p class="mb-4 text-gray-600 dark:text-gray-300">Jangan ragu, langsung diskusikan proyek Anda dengan kami.
             </p>
-            <WhatsappButton phone-number="6285156436826"
+            <LazyBlogWhatsappButton phone-number="6285156436826"
               :message="`Halo, saya tertarik dengan jasa bangunan setelah membaca artikel '${post.title}'.`" />
           </div>
 
           <div class="mt-12">
             <h3 class="text-2xl font-bold mb-4">Diskusi dan Tanya Jawab</h3>
             <ClientOnly>
-              <FacebookComments :path="route.path" />
+              <LazyBlogFacebookComments :path="route.path" />
             </ClientOnly>
           </div>
         </main>
