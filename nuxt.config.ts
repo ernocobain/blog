@@ -19,7 +19,6 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxt/image',
     '@nuxt/ui',
-    'nuxt-disqus',
   ],
 
   content: {
@@ -38,10 +37,6 @@ export default defineNuxtConfig({
     '~/assets/css/main.css',
     '@/assets/css/prose.css' 
   ],
-  disqus: {
-    shortname: "maunguli",
-  },
-
   ui: {
     theme: {
       colors: ['primary', 'secondary', 'tertiary', 'info', 'success', 'warning', 'error']

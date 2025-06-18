@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ContentImageRenderer } from '#components';
+import FacebookComents from '~/components/blog/FacebookComents.vue';
 
 const route = useRoute();
 const slug = route.params.slug;
@@ -79,58 +80,58 @@ if (post.value) {
     <template v-if="postStatus === 'pending'">
       <p>Loading post...</p>
     </template>
+
     <template v-else-if="postStatus === 'error'">
-      <p>Error loading post</p>
+      <p>Error loading post. Mohon coba lagi.</p>
     </template>
-    <template v-else-if="post">
+
+    <template v-else-if="!post">
+      <p>Post not found.</p>
+    </template>
+
+    <template v-else>
       <UBreadcrumb :items="[
         { label: 'Home', to: '/' },
         { label: post.title }
       ]" class="mb-6" />
 
       <div class="flex flex-col lg:flex-row gap-12">
-        <!-- Main Content -->
-        <div class="flex-1">
-          <div class="space-y-6">
-            <h1 class="text-3xl font-bold">{{ post.title }}</h1>
+        <div class="lg:w-2/3">
+          <article class="space-y-6">
+            <h1 class="text-3xl font-bold tracking-tight">{{ post.title }}</h1>
 
-            <!-- Tags Section -->
-            <div v-if="post.tags?.length" class="flex gap-2 flex-wrap mb-4">
+            <div class="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
+              <span>{{ new Date(post.date).toLocaleDateString() }}</span>
+              <span v-if="readingTime">· {{ readingTime }}</span>
+            </div>
+
+            <div v-if="post.tags?.length" class="flex gap-2 flex-wrap">
               <UBadge v-for="tag in post.tags" :key="tag" color="primary" variant="soft">
                 {{ tag }}
               </UBadge>
             </div>
-            <div v-else class="text-sm text-gray-500 mb-4">
-              No tags available
-            </div>
 
-            <p class="text-sm text-gray-500 dark:text-gray-400">
-              {{ new Date(post.date).toLocaleDateString() }}
-            </p>
-            <ContentRenderer :value="post.body" class="prose dark:prose-invert" :components="{
-              img:ContentImageRenderer
-            }"/>
-          </div>
+            <ContentRenderer :value="post.body" class="prose dark:prose-invert max-w-none"
+              :components="{ img: ContentImageRenderer }" />
+          </article>
 
-          <!-- Reading Time -->
-          <div v-if="readingTime" class="mt-6 text-sm text-gray-500">
-            <p>Reading Time: {{ readingTime }}</p>
+          <div class="mt-12">
+            <ClientOnly>
+              <div class="mt-12">
+                <h3 class="text-2xl font-bold mb-4">Diskusi dan Tanya Jawab</h3>
+                <ClientOnly>
+                  <FacebookComents :url="route.path" />
+                </ClientOnly>
+              </div>
+            </ClientOnly>
           </div>
         </div>
-        <div>
 
-          <template v-if="post && post._id && route.fullPath">
-            <client-only>
-              <BlogDisqusCard :url="`https://blog.maunguli.com/${route.fullPath}`" :identifier="post._id"
-                shortname="maunguli" />
-            </client-only>
-          </template>
+        <div class="lg:w-1/3">
+          <BlogSidebar :latest-posts="latestPosts" title="Postingan Terakhir" :related-posts="relatedPosts"
+            title-relate="Related Post" />
         </div>
-       <BlogSidebar  :latest-posts="latestPosts" title="Postingan Terakhir" :related-posts="relatedPosts" title-relate="Related Post"/>
-      </div> 
-    </template>
-    <template v-else>
-      <p>Post not found</p>
+      </div>
     </template>
   </UContainer>
 </template>
