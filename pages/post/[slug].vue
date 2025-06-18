@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ContentImageRenderer } from '#components';
-import FacebookComents from '~/components/blog/FacebookComents.vue';
+import FacebookComments from '~/components/blog/FacebookComments.vue';
+import FacebookComents from '~/components/blog/FacebookComments.vue';
 import WhatsappButton from '~/components/blog/WhatsappButton.vue';
 
 const route = useRoute();
@@ -64,14 +65,24 @@ const readingTime = computed(() => {
   return `${minutes} menit baca`
 });
 
-// SEO meta
+// File: pages/post/[...slug].vue
+
+// ... di dalam <script setup>
+
 if (post.value) {
+   const imageUrl = post.value.cover 
+    ? `https://blog.maunguli.com${post.value.cover}` 
+    : 'https://blog.maunguli.com/images/hero-sectiion-backgound-maunguli.jpg';
+
   useSeoMeta({
     title: post.value.title,
     description: post.value.description ?? post.value.excerpt ?? '',
     ogTitle: post.value.title,
     ogDescription: post.value.description ?? post.value.excerpt ?? '',
     ogType: 'article',
+    
+    // TAMBAHKAN BARIS INI
+    ogImage: imageUrl,
   });
 }
 </script>
@@ -120,7 +131,7 @@ if (post.value) {
           <div class="mt-12">
             <h3 class="text-2xl font-bold mb-4">Diskusi dan Tanya Jawab</h3>
             <ClientOnly>
-              <FacebookComents :path="route.path" />
+              <FacebookComments :path="route.path" />
             </ClientOnly>
           </div>
         </main>
