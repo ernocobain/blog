@@ -13,6 +13,17 @@ export default defineNuxtConfig({
       }
     }
   },
+  // GANTI BLOK image: { domains: [...] } ANDA DENGAN INI
+  image: {
+    ipx: {
+      http: {
+        domains: [
+          'cdn.jsdelivr.net',
+          'blogger.googleusercontent.com'
+        ]
+      }
+    }
+  },
 
   app: {
     head: {
@@ -26,26 +37,20 @@ export default defineNuxtConfig({
       link: [
         // Menggunakan file .ico sebagai fallback utama
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-        
+
         // Menggunakan file .png untuk browser modern
         { rel: 'icon', type: 'image/png', sizes: '96x96', href: '/favicon-96x96.png' },
 
         // Ikon untuk perangkat Apple (saat di-add to homescreen)
         { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
-        
+
         // Anda juga bisa menambahkan file manifest untuk PWA di sini
         // { rel: 'manifest', href: '/site.webmanifest' }
       ]
     }
   },
 
-  modules: [
-    '@nuxt/content',
-    '@nuxt/fonts',
-    '@nuxt/icon',
-    '@nuxt/image',
-    '@nuxt/ui',
-  ],
+  modules: ['@nuxt/content', '@nuxt/fonts', '@nuxt/icon', '@nuxt/image', '@nuxt/ui', '@nuxt/scripts'],
 
   content: {
     preview: {
@@ -61,7 +66,7 @@ export default defineNuxtConfig({
 
   css: [
     '~/assets/css/main.css',
-    '@/assets/css/prose.css' 
+    '@/assets/css/prose.css'
   ],
   ui: {
     theme: {
@@ -70,21 +75,21 @@ export default defineNuxtConfig({
   },
 
   vite: {
-  build: {
-    minify: 'terser',
-    rollupOptions: {
-      output: {
-        manualChunks(id) {
-          if (id.includes('node_modules')) {
-            return 'vendor'; // Memisahkan vendor dari kode utama
+    build: {
+      minify: 'terser',
+      rollupOptions: {
+        output: {
+          manualChunks(id) {
+            if (id.includes('node_modules')) {
+              return 'vendor'; // Memisahkan vendor dari kode utama
+            }
           }
         }
       }
     }
-  }
-},
+  },
 
-  build:{
+  build: {
     analyze: true
   }
 

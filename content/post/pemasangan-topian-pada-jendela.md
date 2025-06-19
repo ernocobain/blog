@@ -1,8 +1,12 @@
 ---
-tags: []
+tags: 
+  - kanopi
+  - Exterior
+
 title: Pemasangan topian pada jendela tampk depan
 description: Pekerja sedang mengerjakan topian di atas jendela  bagian depan bangunan
-path: /post/pemasangan-topian-pada-jedela
+path: /post/pemasangan-topian-pada-jendela
+cover: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg7l5XSh_gVmYvF7hRPT2GJQEKhyvbl6kJhUpecNWsUcwkF-TXlHRhNSvOaudVaQPj0hsx9j2WPiNLPzWomQHsW0AI2sPNCxYgAplPBd6kL1OY9lzOtYwfHK3WJOuY3KKmYz04CaEP_Iy4rC2_hvFzooAvo_JL5fyOG4Krua0HfmwKDKoWFDtDPQFT6KfwH/s320/IMG-20241004-WA0021.jpg)![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhzLZAVlmniSuwlvTP0QsoBxDrpME5lPnauZEwrBiYmyuot-UF7mZPMM0Y4hxPd5u9H9_AL7b2wtbykTC0-76NjB4bNFNHgY9E9ZQ06hHd9vxTraGM1GXE9tuOl-KWd63NF69dsCURcWTILrKovm_x_BxlccO6Sq_Gn-2Pv2_ETyz1CMQbY22-dVPYmVlSR/s320/IMG-20241001-WA0010.jpg
 seo:
   title: Pemasangan topian pada jendela tampk depan
   description: Pekerja sedang mengerjakan topian di atas jendela  bagian depan bangunan

@@ -7,7 +7,7 @@ image: ""
 cover: https://picsum.photos/id/1/200/300
 tags:
   - pemasangan pagar
-  - pembatasan taman
+  - Exterior
 seo:
   title: Pemasangan pagar beton
   description: Pemasangan pagar beton dan kanstin untuk pembatas taman.

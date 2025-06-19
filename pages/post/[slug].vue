@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { BlogSidebar, ContentImageRenderer, ContentRenderer, LazyBlogFacebookComments, LazyBlogWhatsappButton, UBreadcrumb } from '#components';
+import { BlogSidebar, ContentImageRenderer, ContentRenderer, LazyBlogFacebookComments, LazyBlogWhatsappButton, UBreadcrumb, VideoPlayer } from '#components';
 const route = useRoute();
 const slug = route.params.slug;
 
@@ -81,6 +81,14 @@ if (post.value) {
     ogImage: imageUrl,
   });
 }
+
+const customComponents = {
+  // 'video-player' akan dicocokkan dengan ::video-player di Markdown
+  'video-player': VideoPlayer,
+  // 'img' akan dicocokkan dengan tag <img> standar di Markdown
+  'img': ContentImageRenderer
+}
+
 </script>
 
 <template>
@@ -112,7 +120,7 @@ if (post.value) {
             </div>
 
             <ContentRenderer :value="post.body" class="prose dark:prose-invert max-w-none"
-              :components="{ img: ContentImageRenderer }" />
+              :components="customComponents"   />
           </article>
 
           <div class="my-12 p-6 bg-gray-100 dark:bg-gray-800 rounded-lg text-center">

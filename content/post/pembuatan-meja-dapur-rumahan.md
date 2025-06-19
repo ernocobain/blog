@@ -1,8 +1,25 @@
+---
+title: Pemasangan pagar beton
+description: Pemasangan pagar beton dan kanstin untuk pembatas taman.
+date: 2025-06-19
+path: /post/pembuatan-meja-dapur-rumahan
+cover: https://cdn.jsdelivr.net/gh/dhikrama/images/meja-dapur-simple.webp
+tags:
+  - Meja Dapur
+  - Interior
+  - popular
+seo:
+  title: Pemasangan meja dapur minimalis
+  description: Pemasangan meja dapur minimalis untuk rumahan dan gedung.
+---
+
 # Pembuatan Meja Dapur Rumahan page
 
 ![Meja dapur hasil karya Maunguli](https://cdn.jsdelivr.net/gh/dhikrama/images/meja-dapur-simple.webp)
 
 ## Desain Modern dan Bersih
+
+::video-player{videoId="_IXXYrGlgWE"}
 
 Dalam kehidupan sehari-hari, dapur menjadi salah satu ruang paling penting dalam rumah. Sebagai tempat untuk memasak, mencuci, dan berkumpul, dapur membutuhkan desain yang fungsional sekaligus estetik. Meja dapur ini dirancang dengan permukaan granit hitam yang memberikan kesan mewah dan modern. Material ini tidak hanya tahan lama, tetapi juga mudah dibersihkan, sehingga sangat cocok untuk aktivitas dapur sehari-hari.
 
