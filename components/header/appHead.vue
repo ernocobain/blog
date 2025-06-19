@@ -4,7 +4,7 @@
       <!-- Logo -->
       <a href="/" target="_blank" rel="noopener noreferrer"
         class="flex items-center gap-2 font-bold text-xl text-gray-900 dark:text-white hover:text-primary dark:hover:text-primary transition-colors duration-200">
-        <UIcon name="i-heroicons-globe-alt" class="w-6 h-6 text-primary" />
+        <NuxtImg src="/favicon-96x96.png" alt="Logo" width="27" height="27" class=" text-primary" />
         Maunguli Blog
       </a>
 
@@ -108,6 +108,7 @@
 </template>
 
 <script setup lang="ts">
+import { NuxtImg } from '#components'
 import { ref, computed } from 'vue'
 
 const isSidebarOpen = ref(false)
