@@ -15,11 +15,11 @@ seo:
 
 # Pasang Pagar Batas Beton dan Kanstin Taman
 
-## Pemasangan Pagar Beton dan Kanstin untuk Pembatas Taman
+Pemasangan Pagar Beton dan Kanstin untuk Pembatas Taman
 
 Pagar beton dan kanstin merupakan solusi praktis untuk menciptakan pembatas taman yang kokoh, tahan lama, serta estetis. Kombinasi ini membantu menjaga area taman tetap rapi dan tertata dengan baik.
 
-## Keunggulan Pagar Beton dan Kanstin
+## Keunggulan pagar beton
 
 - **Daya Tahan Tinggi**: Pagar beton dan kanstin terbuat dari material yang tahan terhadap cuaca ekstrem dan benturan, sehingga sangat cocok digunakan untuk pembatas taman.
 - **Instalasi Mudah**: Proses pemasangan pagar beton dan kanstin lebih cepat dibandingkan dengan metode lainnya. Cukup dengan menyiapkan fondasi yang rata, elemen beton dapat langsung dipasang.
