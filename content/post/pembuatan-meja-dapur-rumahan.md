@@ -1,4 +1,5 @@
 ---
+
 title: Pembuatan meja dapur minimalis rumahan
 description: Renovasi rumah interior pemasangan meja dapur yang minimalis
 date: 2025-06-19
@@ -18,8 +19,6 @@ seo:
 ![Meja dapur hasil karya Maunguli](https://cdn.jsdelivr.net/gh/dhikrama/images/meja-dapur-simple.webp)
 
 ## Desain Modern dan Bersih
-
-::video-player{videoId="_IXXYrGlgWE"}
 
 Dalam kehidupan sehari-hari, dapur menjadi salah satu ruang paling penting dalam rumah. Sebagai tempat untuk memasak, mencuci, dan berkumpul, dapur membutuhkan desain yang fungsional sekaligus estetik. Meja dapur ini dirancang dengan permukaan granit hitam yang memberikan kesan mewah dan modern. Material ini tidak hanya tahan lama, tetapi juga mudah dibersihkan, sehingga sangat cocok untuk aktivitas dapur sehari-hari.
 
