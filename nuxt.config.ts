@@ -25,6 +25,18 @@ export default defineNuxtConfig({
     }
   },
 
+   routeRules: {
+    // Cache semua halaman postingan blog di server selama 1 jam (3600 detik)
+    '/post/**': { 
+      swr: 3600 
+    },
+
+    // Contoh lain: Halaman beranda bisa di-cache lebih lama
+    '/': { 
+      swr: 86400 // 1 hari
+    },
+  },
+
   app: {
     head: {
       title: 'Blog Maunguli - Jasa Tukang Bangunan',
