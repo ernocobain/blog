@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { BlogSidebar, ContentImageRenderer, ContentRenderer, LazyBlogFacebookComments, LazyBlogWhatsappButton, UBreadcrumb, VideoPlayer } from '#components';
+import { BlogSidebar, ContentImageRenderer, ContentRenderer, LazyBlogFacebookComments, LazyBlogWhatsappButton, Title, UBreadcrumb, VideoPlayer } from '#components';
 const route = useRoute();
 const slug = route.params.slug;
 
@@ -84,7 +84,7 @@ if (post.value) {
 
 const customComponents = {
   // 'video-player' akan dicocokkan dengan ::video-player di Markdown
-  'video-player': VideoPlayer,
+  'video-player': VideoPlayer, Title ,
   // 'img' akan dicocokkan dengan tag <img> standar di Markdown
   'img': ContentImageRenderer
 }

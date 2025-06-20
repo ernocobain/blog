@@ -1,6 +1,6 @@
 ---
-title: Pemasangan pagar beton
-description: Pemasangan pagar beton dan kanstin untuk pembatas taman.
+title: Pembuatan meja dapur minimalis rumahan
+description: Renovasi rumah interior pemasangan meja dapur yang minimalis
 date: 2025-06-19
 path: /post/pembuatan-meja-dapur-rumahan
 cover: https://cdn.jsdelivr.net/gh/dhikrama/images/meja-dapur-simple.webp

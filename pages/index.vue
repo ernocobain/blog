@@ -70,10 +70,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <UContainer class="py-8">
-    <BlogSearch />
-    <BlogHeroBanner />
-
+  <UContainer>
     <div class="flex flex-col lg:flex-row gap-8 mt-10">
       <div class="flex-1">
         <template v-if="blogPostsStatus === 'pending'">
@@ -147,7 +144,8 @@ useSeoMeta({
         </div>
       </div>
 
-      <div class="w-full lg:w-auto"> <template v-if="blogPostsStatus === 'pending'">
+      <div class="w-full lg:w-80 flex-shrink-0">
+        <template v-if="blogPostsStatus === 'pending'">
           <UCard class="p-6">
             <USkeleton class="h-6 w-1/2 mb-4" />
             <USkeleton class="h-24 w-full mb-2" v-for="i in 3" :key="i"/>
